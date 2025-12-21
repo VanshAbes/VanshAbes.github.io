@@ -362,6 +362,11 @@ footer p {
     right: 16px;
     top: 14px;
   }
+  nav{
+    position: relative;
+    border-radius: 0;
+    background: transparent;
+  }
 
   nav ul {
     display: none;
@@ -372,11 +377,32 @@ footer p {
     left: 0;
     width: 100%;
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;      /* 🔥 important (not 100vh) */
+    width: 100vw;
+
+    padding-top: 70px;  /* space for close icon */
+    gap: 18px;
+
+    background: rgba(245,245,247,0.96);
+    backdrop-filter: blur(16px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateY(-100%);
+    transition: transform 0.45s ease;
+    z-index: 999;
   }
 
   #menu-toggle:checked~ul {
     display: flex;
+    transform: translateY(0);
   }
+  
 
   header {
     display: none;
@@ -390,6 +416,7 @@ footer p {
   .polygon-bg,
   .content {
     width: 100%;
+    overflow: visible;
     overflow-x: hidden;
   }
 
@@ -407,6 +434,12 @@ footer p {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+  .hamburger{
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
   }
 
 }
