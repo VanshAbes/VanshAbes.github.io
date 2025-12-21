@@ -408,19 +408,13 @@ footer p {
     display: none;
   }
 
-  html,
-  body {
+  html,body {
     overflow-x: hidden;
   }
 
-  .polygon-bg,
-  .content {
+  .polygon-bg,.content {
     width: 100%;
     overflow: visible;
-    overflow-x: hidden;
-  }
-
-  html, body{
     overflow-x: hidden;
   }
 
