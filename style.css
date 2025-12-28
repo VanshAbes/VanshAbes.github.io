@@ -205,7 +205,7 @@ main {
 }
 
 .intelligence {
-  min-width: 320px;
+  /* min-width: 320px; */
   background: #f5f5f7;
   border-radius: 26px;
   padding: 24px;
@@ -215,6 +215,13 @@ main {
 
 .intelligence:hover {
   transform: translateY(-10px);
+}
+
+.int1 .image img {
+  margin: 0px;
+  align-self: center;
+  border: 2px solid whitesmoke;
+  /* border-radius: 40%; */
 }
 
 .image img {
@@ -277,6 +284,10 @@ footer p {
   color: rgb(255, 255, 255);
 
 }
+footer .list ul a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
 
 .list {
   display: flex;
@@ -306,14 +317,14 @@ footer p {
 /* =====================================
    MOBILE (≤650px)
 ===================================== */
-@media(max-width:650px) {
+@media(max-width:768px) {
 
   main {
     padding: 18px;
     margin-top: 20px;
   }
 
-  main{
+  main {
     width: 100%;
     margin: 0;
     padding-left: 16px;
@@ -338,7 +349,7 @@ footer p {
   .comfortaa {
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 800;
     font-style: normal;
   }
 
@@ -362,7 +373,8 @@ footer p {
     right: 16px;
     top: 14px;
   }
-  nav{
+
+  nav {
     position: relative;
     border-radius: 0;
     background: transparent;
@@ -380,13 +392,15 @@ footer p {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100dvh;      /* 🔥 important (not 100vh) */
+    height: 100dvh;
+    /* 🔥 important (not 100vh) */
     width: 100vw;
 
-    padding-top: 70px;  /* space for close icon */
+    padding-top: 70px;
+    /* space for close icon */
     gap: 18px;
 
-    background: rgba(245,245,247,0.96);
+    background: rgba(245, 245, 247, 0.96);
     backdrop-filter: blur(16px);
 
     display: flex;
@@ -402,79 +416,61 @@ footer p {
     display: flex;
     transform: translateY(0);
   }
-  
+
 
   header {
     display: none;
   }
 
-  html,body {
+  html,
+  body {
     overflow-x: hidden;
   }
 
-  .polygon-bg,.content {
+  .polygon-bg,
+  .content {
     width: 100%;
     overflow: visible;
     overflow-x: hidden;
   }
 
-  .product,
-  .productline2{
+  .intelligence {
+
+    width: 48%;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .intelligence .image img {
+    border: none;
+    width: 100%;
+  }
+
+  .product {
     max-width: 100%;
   }
 
-  .content{
+  .productline2 {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content {
     max-width: 100% !important;
     width: 100%;
     margin: 0;
     padding: 0;
   }
-  .hamburger{
+
+  .hamburger {
     position: fixed;
     top: 16px;
     left: 16px;
     z-index: 1000;
   }
-
-}
-
-/* =====================================
-   MOBILE (≤450px)
-===================================== */
-@media(max-width:450px) {
-
-  .left h1 {
-    font-size: 48px;
-  }
-
-  .intelligence {
-    min-width: 240px;
-    padding: 18px;
-  }
-
-  .image img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .foot ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
-    gap: 16px;
-    font-size: 15px;
-  }
-
-  .hamburger {
-    left: 12px;
-    top: 12px;
-  }
-
-}
-
-@media(max-width:650px) {
 
   /* === HAMBURGER LEFT === */
   .hamburger {
@@ -526,7 +522,99 @@ footer p {
   header {
     display: none;
   }
+
+  .list {
+    flex-direction: column;
+  }
+
+  .footer-accordion {
+    border-bottom: 1px solid #2d2d2d;
+    padding: 14px 0;
+  }
+
+  .footer-accordion input {
+    display: none;
+  }
+
+  .footer-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .footer-title .icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  /* CLOSED STATE */
+  .footer-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding-left: 4px;
+  }
+
+  .footer-content li {
+    padding: 6px 0;
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  /* OPEN STATE */
+  .footer-accordion input:checked~.footer-content {
+    max-height: 500px;
+    margin-top: 10px;
+  }
+
+  /* + → × */
+  .footer-accordion input:checked+.footer-title .icon {
+    transform: rotate(45deg);
+  }
+
 }
+
+/* =====================================
+   MOBILE (≤450px)
+===================================== */
+@media(max-width:580px) {
+
+  .left h1 {
+    font-size: 48px;
+  }
+
+  .intelligence {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .image img {
+    height: fit-content;
+  }
+
+  .foot ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 16px;
+    font-size: 15px;
+  }
+
+  .hamburger {
+    left: 12px;
+    top: 12px;
+  }
+
+}
+
+
 
 
 /* ===============================
@@ -542,4 +630,33 @@ header {
 main {
   margin-top: 0;
   padding: 40px;
+}
+/* ===============================
+   DESKTOP FIX – HIDE ACCORDION UI
+================================ */
+
+/* Desktop view */
+@media (min-width:769px) {
+
+  /* checkbox hide */
+  .footer-accordion input {
+    display: none !important;
+  }
+
+  /* plus icon hide */
+  .footer-title .icon {
+    display: none !important;
+  }
+
+  /* title normal text */
+  .footer-title {
+    cursor: default;
+  }
+
+  /* content always visible */
+  .footer-content {
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 8px;
+  }
 }
